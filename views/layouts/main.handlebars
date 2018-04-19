@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Shiela Nasehi">
+  
+  <title>Car Article Scraper</title>
+
+  {{!-- Bootstrap CDN --}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  {{!-- Materialize CSS CDN --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  {{!-- Custom CSS --}}
+  <link rel="stylesheet" href="assets/stylesheets/style.css">
+</head>
+
+<body>
+  {{!-- Navbar --}}
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper mainNav">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li></li>
+          <li><a href="/">Home</a></li>
+        </ul>
+
+        <ul class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn scrapeBtn" href="/scrape">Scrape New Articles</a></li>
+          <li><a href="http://autoweek.com/car-news/technology">AUTO WEEK</a></li>
+          <li><a href="https://github.com/arezonasehi/article-scraper">Github Repo</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  {{!-- Header --}}
+  <div class="newspaper center">
+    <h1 class="center">Car Article Scraper</h1>
+  </div>
+
+  {{!-- Article Information --}}
+  <main class="container">
+    {{#unless articles}}
+
+    <div class="jumbotron text-center noArticle">
+      No articles here. You need to scrape new car articles.
+    </div>
+
+    {{/unless}}
+
+    {{{ body }}}
+  </main>
+
+  {{!-- Footer --}}
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="copyright-text">
+        © Articles are scraped from <a href="http://autoweek.com/car-news/technology">www.autoweek.com</a>
+      </div>
+    </div>
+  </footer>
+
+  {{!-- Materialize JS CDN --}}
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  {{!-- Custom JS --}}
+  <script type="text/javascript" src="assets/javascripts/app.js"></script>
+
+</body>
+
+</HTML>

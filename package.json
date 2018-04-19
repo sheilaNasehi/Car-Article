@@ -1,0 +1,33 @@
+{
+  "name": "article-scraper",
+  "version": "1.0.0",
+  "description": "Article Scraper utilizing Mongoose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dskay3/article-scraper.git"
+  },
+  "keywords": [
+    "Scraper"
+  ],
+  "author": "Daniel Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dskay3/article-scraper/issues"
+  },
+  "homepage": "https://github.com/dskay3/article-scraper#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.5",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.13",
+    "morgan": "^1.9.0",
+    "request": "^2.83.0"
+  }
+}

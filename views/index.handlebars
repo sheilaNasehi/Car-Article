@@ -1,0 +1,51 @@
+{{#each articles}}
+  {{!-- Each article --}}
+  <div class="col s12 m6">
+    <div class="card grey darken-1">
+      <div class="card-content white-text">
+        <span class="strong">Article: </span><span class="card-title">{{ title }}</span>
+      </div>
+
+      <div class="card-action">
+        <a href="{{ link }}">Source</a>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Comment</a>
+        <a class="retrievedDate">{{ retrieved }}</a>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Modal for Adding Comment --}}
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Comment Box</h4>
+      <p>Please add a comment.</p>
+
+      {{!-- Form --}}
+      <form id="form-add-{{_id}}" action="article/comment/add/{{_id}}" method="post" style="background-color: white;">
+
+        <!-- Author Name Input -->
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="author_name" name="name" type="text" class="validate">
+            <label for="author_name">Name:</label>
+          </div>
+        </div>
+        
+        <!-- Comment Input -->
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="comment_box" name="comment" class="materialize-textarea"></textarea>
+            <label for="comment_box">Comment Body:</label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="row">
+          <div class="input-field col s12">
+          <center><input class="btn add-commment-btn" data-id="{{_id}}" type="submit" value="Submit"></center>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{{/each}}
